@@ -55,6 +55,14 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
+        .hero-logo {
+            width: 800px;
+            max-width: calc(100% - 50px);
+            height: auto;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1) drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.3));
+        }
+
         .hero .palm-icon {
             width: 60px;
             height: 60px;
@@ -383,6 +391,10 @@
                 letter-spacing: 3px;
             }
 
+            .hero-logo {
+                width: 600px;
+            }
+
             .hero-subtitle {
                 font-size: 1.2rem;
             }
@@ -424,6 +436,11 @@
             .hero h1 {
                 font-size: 1.7rem;
                 letter-spacing: 2px;
+            }
+
+            .hero-logo {
+                width: 100%;
+                max-width: calc(100% - 50px);
             }
 
             .hero .palm-icon {
@@ -756,7 +773,7 @@
 
     <div class="hero">
         <div class="hero-content">
-            <h1>THE PALMTREE COLLECTION</h1>
+            <img src="images/logo.png" alt="The Palmtree Collection" class="hero-logo">
             <p class="hero-subtitle">Boutique family travel, met hart en ziel</p>
         </div>
     </div>
