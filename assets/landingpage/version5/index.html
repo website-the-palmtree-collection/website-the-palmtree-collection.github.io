@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Palmtree Collection - Boutique Family Travel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', 'Courier', monospace;
+            background: #f9e9d2;
+            color: #3d2817;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Retro geometric background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(45, 139, 143, 0.03) 35px, rgba(45, 139, 143, 0.03) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(193, 120, 84, 0.03) 35px, rgba(193, 120, 84, 0.03) 70px);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .postcard {
+            background: #fdfbf7;
+            border: 15px solid #e8cfab;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.15),
+                inset 0 0 0 2px #d4b896;
+            padding: 3rem;
+            position: relative;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) rotate(-2deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        /* Vintage stamp effect */
+        .stamp {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 80px;
+            height: 80px;
+            border: 3px dashed #c17854;
+            background: #f4e8d8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            transform: rotate(12deg);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .vintage-banner {
+            background: linear-gradient(135deg, #e67e50 0%, #c17854 100%);
+            color: #fdfbf7;
+            text-align: center;
+            padding: 1.5rem;
+            margin: -3rem -3rem 2rem -3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vintage-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.05) 10px,
+                rgba(255, 255, 255, 0.05) 20px
+            );
+        }
+
+        .vintage-banner h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .vintage-banner .palm-accent {
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+
+        .subtitle {
+            font-family: 'Georgia', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #2d8b8f;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .subtitle::before,
+        .subtitle::after {
+            content: '~';
+            margin: 0 1rem;
+            color: #c17854;
+        }
+
+        .polaroid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: rotate(-2deg);
+            transition: all 0.3s ease;
+        }
+
+        .polaroid:nth-child(2) {
+            transform: rotate(2deg);
+            margin-top: 1rem;
+        }
+
+        .polaroid:nth-child(3) {
+            transform: rotate(-1deg);
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 10;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .polaroid-caption {
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            padding: 10px 0 0 0;
+            font-size: 0.9rem;
+            color: #5a4a3a;
+        }
+
+        .content-box {
+            background: linear-gradient(135deg, #fffef9 0%, #f9f3e8 100%);
+            border: 3px solid #2d8b8f;
+            border-radius: 0;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 8px 8px 0 #e8cfab;
+        }
+
+        .content-text {
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #3d2817;
+            margin-bottom: 1.2rem;
+        }
+
+        .highlight-text {
+            color: #c17854;
+            font-weight: 600;
+        }
+
+        .divider {
+            text-align: center;
+            font-size: 2rem;
+            color: #2d8b8f;
+            margin: 1.5rem 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: repeating-linear-gradient(
+                45deg,
+                #2d8b8f,
+                #2d8b8f 10px,
+                #3aa0a5 10px,
+                #3aa0a5 20px
+            );
+            position: relative;
+        }
+
+        .cta-content {
+            background: #fdfbf7;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .cta-title {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            color: #c17854;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: #e67e50;
+            color: white;
+            text-decoration: none;
+            font-family: 'Georgia', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 4px solid #c17854;
+            box-shadow: 5px 5px 0 #2d8b8f;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .cta-btn:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0 #2d8b8f;
+        }
+
+        .email-display {
+            margin-top: 1.5rem;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            color: #2d8b8f;
+            font-weight: 700;
+        }
+
+        .email-display a {
+            color: #c17854;
+            text-decoration: none;
+            border-bottom: 3px solid #c17854;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
+            .postcard {
+                border-width: 10px;
+                padding: 2rem 1.5rem;
+            }
+
+            .vintage-banner {
+                margin: -2rem -1.5rem 1.5rem -1.5rem;
+                padding: 1.25rem;
+            }
+
+            .vintage-banner h1 {
+                font-size: 1.8rem;
+                letter-spacing: 3px;
+            }
+
+            .vintage-banner .palm-accent {
+                font-size: 1.2rem;
+            }
+
+            .stamp {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .polaroid-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .polaroid {
+                margin-top: 0 !important;
+            }
+
+            .content-box {
+                padding: 1.5rem;
+                box-shadow: 5px 5px 0 #e8cfab;
+            }
+
+            .content-text {
+                font-size: 1rem;
+            }
+
+            .cta-title {
+                font-size: 1.4rem;
+            }
+
+            .cta-btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .vintage-banner h1 {
+                font-size: 1.4rem;
+                letter-spacing: 2px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .content-text {
+                font-size: 0.95rem;
+            }
+
+            .polaroid img {
+                height: 150px;
+            }
+
+            .cta-section {
+                padding: 1rem;
+            }
+
+            .cta-content {
+                padding: 1.5rem;
+            }
+
+            .cta-btn {
+                padding: 0.875rem 1.75rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="postcard">
+            <div class="stamp">🌴</div>
+
+            <div class="vintage-banner">
+                <h1>
+                    <span class="palm-accent">🌴</span>
+                    THE PALMTREE COLLECTION
+                    <span class="palm-accent">🌴</span>
+                </h1>
+            </div>
+
+            <p class="subtitle">Boutique Family Travel, met hart en ziel</p>
+
+            <div class="polaroid-container">
+                <div class="polaroid">
+                    <img src="../../vibe1.jpg" alt="Tropical Paradise">
+                    <p class="polaroid-caption">Paradise Awaits</p>
+                </div>
+                <div class="polaroid">
+                    <img src="../../vibe2.jpg" alt="Beach Adventure">
+                    <p class="polaroid-caption">Family Adventures</p>
+                </div>
+                <div class="polaroid">
+                    <img src="../../vibe3.jpg" alt="Exotic Journey">
+                    <p class="polaroid-caption">Exotic Journeys</p>
+                </div>
+            </div>
+
+            <div class="divider">✦ ✦ ✦</div>
+
+            <div class="content-box">
+                <p class="content-text">
+                    Wij ontwerpen <span class="highlight-text">tropische, kindvriendelijke reizen</span> die stijl,
+                    beleving en bewust avontuur combineren — voor gezinnen die samen de wereld willen ontdekken.
+                </p>
+                <p class="content-text">
+                    Van <span class="highlight-text">exotische eilanden</span> tot <span class="highlight-text">luxe safaris</span>
+                    — elke reis is op maat gemaakt met aandacht voor comfort, authenticiteit en duurzaamheid.
+                </p>
+            </div>
+
+            <div class="cta-section">
+                <div class="cta-content">
+                    <h2 class="cta-title">Binnenkort Live!</h2>
+                    <p class="content-text" style="margin-bottom: 0;">
+                        Droom je van een reis die even uniek is als jullie zelf?
+                    </p>
+                    <button class="cta-btn" onclick="revealEmail(event)">Contacteer Ons</button>
+                    <div class="email-display" id="email-display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function revealEmail(event) {
+            event.preventDefault();
+            const user = 'valerie';
+            const domain = 'the-palmtree-collection.com';
+            const email = user + '@' + domain;
+            const emailDisplay = document.getElementById('email-display');
+            emailDisplay.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+            event.target.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

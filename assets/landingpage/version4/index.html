@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Palmtree Collection - Boutique Family Travel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Avenir', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(to bottom, #faf6f1 0%, #f0e6d8 100%);
+            color: #4a3f35;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .palm-icon {
+            font-size: 3rem;
+            color: #2d8b8f;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #2d8b8f;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #c17854;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .intro-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #5a4a3a;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.3s; }
+        .feature-card:nth-child(2) { animation-delay: 0.4s; }
+        .feature-card:nth-child(3) { animation-delay: 0.5s; }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .feature-content {
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d8b8f;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #6b5b4a;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(135deg, #2d8b8f 0%, #3aa0a5 100%);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 40px rgba(45, 139, 143, 0.3);
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .cta-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: white;
+            color: #2d8b8f;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-btn:hover {
+            background: #f0e6d8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .email-display {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .email-display a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .feature-card:nth-child(3) {
+                grid-column: 1 / -1;
+                max-width: 500px;
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .intro-card {
+                padding: 2rem;
+            }
+
+            .intro-text {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .feature-card:nth-child(3) {
+                grid-column: auto;
+            }
+
+            .feature-image {
+                height: 200px;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6rem;
+                letter-spacing: 1px;
+            }
+
+            .palm-icon {
+                font-size: 2.5rem;
+            }
+
+            .intro-card {
+                padding: 1.5rem;
+            }
+
+            .intro-text {
+                font-size: 0.95rem;
+            }
+
+            .feature-image {
+                height: 180px;
+            }
+
+            .cta-btn {
+                padding: 0.875rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="palm-icon">🌴</div>
+            <h1>THE PALMTREE COLLECTION</h1>
+            <p class="tagline">Boutique family travel, met hart en ziel</p>
+        </header>
+
+        <div class="intro-card">
+            <p class="intro-text">
+                Wij ontwerpen tropische, kindvriendelijke reizen die stijl, beleving en bewust avontuur combineren
+                — voor gezinnen die samen de wereld willen ontdekken.
+            </p>
+            <p class="intro-text">
+                Elke reis is op maat gemaakt, met aandacht voor comfort, authenticiteit en duurzaamheid.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <img src="../../vibe1.jpg" alt="Exotic Accommodations" class="feature-image">
+                <div class="feature-content">
+                    <div class="feature-icon">🏝️</div>
+                    <h3 class="feature-title">Exotische Bestemmingen</h3>
+                    <p class="feature-description">
+                        Van tropische eilanden tot jungle avonturen — ontdek de mooiste plekken ter wereld.
+                    </p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <img src="../../vibe2.jpg" alt="Family Adventures" class="feature-image">
+                <div class="feature-content">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3 class="feature-title">Familie Avonturen</h3>
+                    <p class="feature-description">
+                        Kindvriendelijke reizen die de hele familie zullen koesteren.
+                    </p>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <img src="../../vibe3.jpg" alt="Personalized Service" class="feature-image">
+                <div class="feature-content">
+                    <div class="feature-icon">✨</div>
+                    <h3 class="feature-title">Op Maat Gemaakt</h3>
+                    <p class="feature-description">
+                        Persoonlijke service met aandacht voor elk detail van jullie droomreis.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 class="cta-title">Binnenkort live...</h2>
+            <p class="cta-text">
+                Droom je van een reis die even uniek is als jullie zelf?<br>
+                Neem vrijblijvend contact op voor meer informatie.
+            </p>
+            <button class="cta-btn" onclick="revealEmail(event)">Neem Contact Op</button>
+            <div class="email-display" id="email-display"></div>
+        </div>
+    </div>
+
+    <script>
+        function revealEmail(event) {
+            event.preventDefault();
+            const user = 'valerie';
+            const domain = 'the-palmtree-collection.com';
+            const email = user + '@' + domain;
+            const emailDisplay = document.getElementById('email-display');
+            emailDisplay.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+            event.target.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Palmtree Collection - Boutique Family Travel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #f4e8d8 0%, #e8d4c0 100%);
+            color: #6b5444;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 700px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .palm-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #2d8b8f;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: #2d8b8f;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #c17854;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            color: #6b5444;
+        }
+
+        .cta {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #2d8b8f 0%, #3aa0a5 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: 'Georgia', serif;
+        }
+
+        .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(45, 139, 143, 0.3);
+        }
+
+        .email-note {
+            font-size: 0.9rem;
+            color: #8b7355;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+            }
+
+            .description {
+                font-size: 1rem;
+            }
+
+            .cta {
+                font-size: 1rem;
+                padding: 0.875rem 1.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .palm-icon {
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            .subtitle {
+                font-size: 0.95rem;
+            }
+
+            .content {
+                padding: 1.25rem;
+            }
+
+            .description {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="palm-icon">🌴</div>
+        <h1>THE PALMTREE COLLECTION</h1>
+        <p class="subtitle">Boutique family travel, met hart en ziel</p>
+
+        <div class="content">
+            <p class="description">
+                Binnenkort lanceren we een unieke reiservaring voor gezinnen die dromen van exotische bestemmingen,
+                luxe avonturen en onvergetelijke herinneringen.
+            </p>
+            <p class="description">
+                Van tropische eilanden tot avontuurlijke roadtrips — elk op maat gemaakt met
+                aandacht voor comfort, authenticiteit en stijl.
+            </p>
+
+            <a href="#" class="cta" onclick="revealEmail(event)">Neem contact op</a>
+            <p class="email-note" id="email-display"></p>
+        </div>
+    </div>
+
+    <script>
+        function revealEmail(event) {
+            event.preventDefault();
+            const user = 'valerie';
+            const domain = 'the-palmtree-collection.com';
+            const email = user + '@' + domain;
+            const emailDisplay = document.getElementById('email-display');
+            emailDisplay.innerHTML = '<a href="mailto:' + email + '" style="color: #2d8b8f; text-decoration: none;">' + email + '</a>';
+            event.target.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

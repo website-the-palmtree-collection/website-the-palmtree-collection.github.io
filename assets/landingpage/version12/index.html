@@ -21,7 +21,7 @@
         .hero {
             min-height: 50vh;
             background: linear-gradient(135deg, rgba(45, 139, 143, 0.85) 0%, rgba(193, 120, 84, 0.75) 100%),
-                        url('images/vibe16.jpg') center 45% / cover no-repeat;
+                        url('images/vibe1.jpg') center center / cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -61,7 +61,9 @@
             margin: 0 auto 1rem;
             stroke: white;
             fill: none;
-            stroke-width: 1;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
             opacity: 0.95;
         }
 
@@ -95,7 +97,7 @@
             display: grid;
             grid-template-columns: 400px 1fr;
             gap: 4rem;
-            align-items: end;
+            align-items: start;
             margin-bottom: 4rem;
         }
 
@@ -104,6 +106,8 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 2rem;
             animation: slideInLeft 1s ease-out;
         }
 
@@ -129,6 +133,17 @@
             text-align: center;
         }
 
+        .profile-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            stroke: #2d8b8f;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
         .profile-name {
             font-size: 1.8rem;
             color: #2d8b8f;
@@ -140,6 +155,7 @@
             font-size: 1.1rem;
             color: #c17854;
             font-style: italic;
+            margin-bottom: 1rem;
         }
 
         .story-content {
@@ -237,17 +253,24 @@
 
         .offer-image {
             width: 100%;
-            height: 480px;
+            height: 200px;
             object-fit: cover;
-        }
-
-        .offer-image.portrait {
-            object-position: center 35%;
         }
 
         .offer-content {
             padding: 2rem;
             text-align: center;
+        }
+
+        .offer-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            stroke: #2d8b8f;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .offer-title {
@@ -273,53 +296,15 @@
             margin-top: 3rem;
         }
 
-        .cta-icon-container {
-            cursor: pointer;
-            display: inline-block;
-            margin-bottom: 1rem;
-            animation: pulse 2s ease-in-out infinite;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-icon-container:hover {
-            transform: scale(1.1);
-            animation: none;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.7;
-                transform: scale(1.05);
-            }
-        }
-
         .cta-icon {
             width: 60px;
             height: 60px;
+            margin: 0 auto 1rem;
             stroke: white;
             fill: none;
-            stroke-width: 1;
-        }
-
-        .email-reveal {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .email-reveal a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 2px solid white;
-            padding-bottom: 2px;
-            transition: opacity 0.3s ease;
-        }
-
-        .email-reveal a:hover {
-            opacity: 0.8;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .cta-title {
@@ -359,15 +344,28 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
+        .email-display {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .email-display a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid white;
+            padding-bottom: 2px;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .about-section {
                 grid-template-columns: 1fr;
                 gap: 3rem;
-                align-items: start;
             }
 
             .profile-card {
+                position: relative;
+                top: 0;
                 max-width: 400px;
                 margin: 0 auto;
             }
@@ -408,10 +406,6 @@
             .offers-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
-            }
-
-            .offer-image {
-                height: 240px;
             }
         }
 
@@ -456,10 +450,6 @@
                 font-size: 1.6rem;
             }
 
-            .offer-image {
-                height: 200px;
-            }
-
             .cta-box {
                 padding: 2rem 1.5rem;
             }
@@ -478,9 +468,19 @@
 <body>
     <div class="hero">
         <div class="hero-content">
+            <svg class="palm-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M51 78 Q49 75 50 38"/>
+                <path d="M36 42 Q42 32 51 37"/>
+                <path d="M64 42 Q58 32 51 37"/>
+                <path d="M32 52 Q42 44 50 46"/>
+                <path d="M68 52 Q58 44 50 46"/>
+                <path d="M30 62 Q42 54 50 52"/>
+                <path d="M70 62 Q58 54 50 52"/>
+                <circle cx="51" cy="30" r="6"/>
+            </svg>
             <h1>THE PALMTREE COLLECTION</h1>
             <p class="hero-subtitle">Boutique family travel, met hart en ziel</p>
-            <div class="coming-soon-badge">Website binnenkort Live</div>
+            <div class="coming-soon-badge">Binnenkort Live</div>
         </div>
     </div>
 
@@ -489,6 +489,13 @@
             <div class="profile-card">
                 <img src="images/valerie.jpg" alt="Valérie Fierens" class="profile-image">
                 <div class="profile-info">
+                    <svg class="profile-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 25 Q45 30 50 35 Q55 30 50 25"/>
+                        <path d="M38 40 Q42 45 50 42 Q58 45 62 40"/>
+                        <path d="M32 50 Q40 55 50 52 Q60 55 68 50"/>
+                        <path d="M36 60 Q44 65 50 62 Q56 65 64 60"/>
+                        <path d="M50 70 Q48 72 50 78"/>
+                    </svg>
                     <h2 class="profile-name">Valérie Fierens</h2>
                     <p class="profile-title">Oprichter & Travel Designer</p>
                 </div>
@@ -496,7 +503,7 @@
 
             <div class="story-content">
                 <span class="section-label">Over mij</span>
-                <h2 class="story-title">Reizen is mijn passie, <br>gezinnen verbinden mijn missie</h2>
+                <h2 class="story-title">Reizen is mijn passie, gezinnen verbinden mijn missie</h2>
 
                 <div class="story-text">
                     <p style="margin-bottom: 1rem;">
@@ -520,8 +527,15 @@
 
             <div class="offers-grid">
                 <div class="offer-card">
-                    <img src="images/vibe1.jpg" alt="Reisplanning op Maat" class="offer-image">
+                    <img src="images/vibe2.jpg" alt="Reisplanning" class="offer-image">
                     <div class="offer-content">
+                        <svg class="offer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28 40 Q26 38 28 70 Q28 72 30 72 L70 72 Q72 72 72 70 L72 40 Q72 38 70 38 L30 38 Q28 38 28 40"/>
+                            <path d="M36 38 Q34 36 34 32 Q34 30 36 28 L64 28 Q66 28 66 30 L66 32 Q66 36 64 38"/>
+                            <circle cx="42" cy="52" r="3"/>
+                            <circle cx="58" cy="52" r="3"/>
+                            <path d="M42 60 Q50 66 58 60"/>
+                        </svg>
                         <h3 class="offer-title">Reisplanning op Maat</h3>
                         <p class="offer-description">
                             Elk detail persoonlijk ontworpen volgens jullie wensen en budget
@@ -530,8 +544,18 @@
                 </div>
 
                 <div class="offer-card">
-                    <img src="images/vibe11.jpg" alt="Exotische Bestemmingen" class="offer-image">
+                    <img src="images/vibe1.jpg" alt="Exotische Bestemmingen" class="offer-image">
                     <div class="offer-content">
+                        <svg class="offer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M51 72 Q49 70 50 36"/>
+                            <path d="M38 40 Q44 32 50 36"/>
+                            <path d="M62 40 Q56 32 50 36"/>
+                            <path d="M34 50 Q44 42 50 44"/>
+                            <path d="M66 50 Q56 42 50 44"/>
+                            <path d="M32 60 Q44 52 50 50"/>
+                            <path d="M68 60 Q56 52 50 50"/>
+                            <circle cx="50" cy="28" r="5"/>
+                        </svg>
                         <h3 class="offer-title">Exotische Bestemmingen</h3>
                         <p class="offer-description">
                             Van tropische eilanden tot avontuurlijke safaris en culturele ontdekkingen
@@ -540,8 +564,21 @@
                 </div>
 
                 <div class="offer-card">
-                    <img src="images/vibe3.jpg" alt="Gezinsvriendelijk" class="offer-image">
+                    <img src="images/vibe4.jpg" alt="Gezinsvriendelijk" class="offer-image">
                     <div class="offer-content">
+                        <svg class="offer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="38" cy="32" r="7"/>
+                            <circle cx="62" cy="32" r="7"/>
+                            <path d="M38 40 Q37 39 37 54 Q37 55 38 55"/>
+                            <path d="M62 40 Q63 39 63 54 Q63 55 62 55"/>
+                            <path d="M38 55 Q37 54 32 60"/>
+                            <path d="M62 55 Q63 54 68 60"/>
+                            <path d="M42 46 Q41 45 58 45 Q59 45 58 46"/>
+                            <circle cx="32" cy="60" r="5"/>
+                            <circle cx="68" cy="60" r="5"/>
+                            <path d="M32 65 Q31 64 31 72"/>
+                            <path d="M68 65 Q69 64 69 72"/>
+                        </svg>
                         <h3 class="offer-title">Gezinsvriendelijk</h3>
                         <p class="offer-description">
                             Reizen die perfect zijn voor kinderen én ouders
@@ -550,8 +587,15 @@
                 </div>
 
                 <div class="offer-card">
-                    <img src="images/vibe6.jpg" alt="Bewust Reizen" class="offer-image portrait">
+                    <img src="images/vibe3.jpg" alt="Bewust Reizen" class="offer-image">
                     <div class="offer-content">
+                        <svg class="offer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 26 Q48 25 46 36 Q45 38 50 38 Q49 37 49 52 Q48 54 42 52 Q40 52 50 76 Q51 77 58 52 Q60 52 51 52 Q51 51 51 38 Q51 37 55 36 Q57 25 50 26"/>
+                            <circle cx="32" cy="32" r="4"/>
+                            <circle cx="68" cy="36" r="3"/>
+                            <circle cx="30" cy="66" r="3"/>
+                            <circle cx="72" cy="62" r="4"/>
+                        </svg>
                         <h3 class="offer-title">Bewust Reizen</h3>
                         <p class="offer-description">
                             Duurzame en authentieke reiservaringen met respect voor lokale gemeenschappen
@@ -562,28 +606,30 @@
         </div>
 
         <div class="cta-box">
-            <div class="cta-icon-container" id="envelope-container" onclick="revealEmail()" title="Klik om e-mail te tonen">
-                <svg class="cta-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="20" y="30" width="60" height="40" rx="3"/>
-                    <path d="M20 35 L50 52 L80 35"/>
-                </svg>
-            </div>
+            <svg class="cta-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 35 Q20 33 20 68 Q20 70 22 70 L78 70 Q80 70 80 68 L80 35 Q80 33 78 33 L22 33 Q20 33 22 35"/>
+                <path d="M20 38 Q18 38 50 54 Q52 55 80 38"/>
+                <path d="M20 33 Q18 32 50 48 Q52 49 80 33"/>
+            </svg>
             <h2 class="cta-title">Klaar om jullie droomreis te plannen?</h2>
             <p class="cta-description">
                 Ook al is de website nog in ontwikkeling, ik sta nu al klaar om jullie te helpen!
                 Neem vrijblijvend contact op voor een eerste inspirerend gesprek.
             </p>
-            <a href="https://www.the-palmtree-collection.com/start-je-reis" class="cta-btn">Start je reis hier</a>
+            <button class="cta-btn" onclick="revealEmail(event)">Stuur me een bericht</button>
+            <div class="email-display" id="email-display"></div>
         </div>
     </div>
 
     <script>
-        function revealEmail() {
+        function revealEmail(event) {
+            event.preventDefault();
             const user = 'valerie';
             const domain = 'the-palmtree-collection.com';
             const email = user + '@' + domain;
-            const container = document.getElementById('envelope-container');
-            container.outerHTML = '<div class="email-reveal"><a href="mailto:' + email + '">' + email + '</a></div>';
+            const emailDisplay = document.getElementById('email-display');
+            emailDisplay.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+            event.target.style.display = 'none';
         }
     </script>
 </body>

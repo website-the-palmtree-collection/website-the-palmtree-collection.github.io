@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Palmtree Collection - Boutique Family Travel</title>
+    <title>The Palmtree Collection - Meet Valérie</title>
     <style>
         * {
             margin: 0;
@@ -21,7 +21,7 @@
         .hero {
             min-height: 50vh;
             background: linear-gradient(135deg, rgba(45, 139, 143, 0.85) 0%, rgba(193, 120, 84, 0.75) 100%),
-                        url('images/vibe16.jpg') center 45% / cover no-repeat;
+                        url('../../vibe1.jpg') center center / cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -55,34 +55,15 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .hero .palm-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1rem;
-            stroke: white;
-            fill: none;
-            stroke-width: 1;
-            opacity: 0.95;
+        .hero .palm {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
         .hero-subtitle {
             font-size: 1.5rem;
             font-style: italic;
             opacity: 0.95;
-            margin-bottom: 1.5rem;
-        }
-
-        .coming-soon-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #f4a460 0%, #e67e50 100%);
-            color: white;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            box-shadow: 0 5px 20px rgba(230, 126, 80, 0.3);
         }
 
         .container {
@@ -95,7 +76,7 @@
             display: grid;
             grid-template-columns: 400px 1fr;
             gap: 4rem;
-            align-items: end;
+            align-items: start;
             margin-bottom: 4rem;
         }
 
@@ -104,6 +85,8 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 2rem;
             animation: slideInLeft 1s ease-out;
         }
 
@@ -140,6 +123,12 @@
             font-size: 1.1rem;
             color: #c17854;
             font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .profile-icon {
+            font-size: 2rem;
+            color: #2d8b8f;
         }
 
         .story-content {
@@ -194,169 +183,127 @@
             font-weight: 600;
         }
 
-        .offers-section {
+        .mission-box {
+            background: linear-gradient(135deg, #2d8b8f 0%, #3aa0a5 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
             margin: 3rem 0;
+            box-shadow: 0 15px 40px rgba(45, 139, 143, 0.3);
         }
 
-        .section-title {
-            font-size: 2rem;
-            color: #2d8b8f;
-            text-align: center;
+        .mission-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .mission-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
             font-weight: 300;
         }
 
-        .section-subtitle {
+        .mission-text {
+            font-size: 1.2rem;
+            line-height: 1.9;
             text-align: center;
-            font-size: 1.1rem;
-            color: #6b5b4a;
-            margin-bottom: 2.5rem;
-            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
         }
 
-        .offers-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+            margin: 3rem 0;
         }
 
-        .offer-card {
+        .service-card {
             background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-
-        .offer-card:hover {
-            border-color: #2d8b8f;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(45, 139, 143, 0.2);
-        }
-
-        .offer-image {
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-        }
-
-        .offer-image.portrait {
-            object-position: center 35%;
-        }
-
-        .offer-content {
             padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
             text-align: center;
+            transition: transform 0.3s ease;
         }
 
-        .offer-title {
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
             font-size: 1.2rem;
             color: #2d8b8f;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
             font-weight: 600;
         }
 
-        .offer-description {
-            font-size: 1rem;
+        .service-text {
+            font-size: 0.95rem;
             color: #6b5b4a;
             line-height: 1.6;
         }
 
-        .cta-box {
-            background: linear-gradient(135deg, #2d8b8f 0%, #3aa0a5 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 25px;
+        .cta-section {
             text-align: center;
-            box-shadow: 0 15px 50px rgba(45, 139, 143, 0.3);
-            margin-top: 3rem;
-        }
-
-        .cta-icon-container {
-            cursor: pointer;
-            display: inline-block;
-            margin-bottom: 1rem;
-            animation: pulse 2s ease-in-out infinite;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-icon-container:hover {
-            transform: scale(1.1);
-            animation: none;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.7;
-                transform: scale(1.05);
-            }
-        }
-
-        .cta-icon {
-            width: 60px;
-            height: 60px;
-            stroke: white;
-            fill: none;
-            stroke-width: 1;
-        }
-
-        .email-reveal {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .email-reveal a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 2px solid white;
-            padding-bottom: 2px;
-            transition: opacity 0.3s ease;
-        }
-
-        .email-reveal a:hover {
-            opacity: 0.8;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .cta-title {
-            font-size: 2.2rem;
+            font-size: 2rem;
+            color: #2d8b8f;
             margin-bottom: 1rem;
             font-weight: 300;
         }
 
-        .cta-description {
-            font-size: 1.2rem;
+        .cta-text {
+            font-size: 1.1rem;
+            color: #5a4a3a;
             margin-bottom: 2rem;
-            opacity: 0.95;
             line-height: 1.8;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .cta-btn {
             display: inline-block;
-            padding: 1.25rem 3rem;
-            background: white;
-            color: #2d8b8f;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, #c17854 0%, #d88a66 100%);
+            color: white;
             text-decoration: none;
             border-radius: 50px;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            letter-spacing: 1px;
         }
 
         .cta-btn:hover {
-            background: #f5e6d3;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(193, 120, 84, 0.4);
+        }
+
+        .email-display {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            color: #5a4a3a;
+        }
+
+        .email-display a {
+            color: #2d8b8f;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid #2d8b8f;
         }
 
         /* Responsive Design */
@@ -364,15 +311,16 @@
             .about-section {
                 grid-template-columns: 1fr;
                 gap: 3rem;
-                align-items: start;
             }
 
             .profile-card {
+                position: relative;
+                top: 0;
                 max-width: 400px;
                 margin: 0 auto;
             }
 
-            .offers-grid {
+            .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -385,11 +333,6 @@
 
             .hero-subtitle {
                 font-size: 1.2rem;
-            }
-
-            .hero .palm-icon {
-                width: 50px;
-                height: 50px;
             }
 
             .container {
@@ -405,13 +348,21 @@
                 padding: 1.5rem;
             }
 
-            .offers-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
+            .mission-box {
+                padding: 2rem;
             }
 
-            .offer-image {
-                height: 240px;
+            .mission-title {
+                font-size: 1.7rem;
+            }
+
+            .mission-text {
+                font-size: 1.1rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
 
@@ -426,18 +377,12 @@
                 letter-spacing: 2px;
             }
 
-            .hero .palm-icon {
-                width: 40px;
-                height: 40px;
+            .hero .palm {
+                font-size: 2rem;
             }
 
             .hero-subtitle {
                 font-size: 1rem;
-            }
-
-            .coming-soon-badge {
-                font-size: 0.85rem;
-                padding: 0.625rem 1.5rem;
             }
 
             .profile-image {
@@ -456,11 +401,7 @@
                 font-size: 1.6rem;
             }
 
-            .offer-image {
-                height: 200px;
-            }
-
-            .cta-box {
+            .cta-section {
                 padding: 2rem 1.5rem;
             }
 
@@ -478,17 +419,18 @@
 <body>
     <div class="hero">
         <div class="hero-content">
+            <div class="palm">🌴</div>
             <h1>THE PALMTREE COLLECTION</h1>
             <p class="hero-subtitle">Boutique family travel, met hart en ziel</p>
-            <div class="coming-soon-badge">Website binnenkort Live</div>
         </div>
     </div>
 
     <div class="container">
         <div class="about-section">
             <div class="profile-card">
-                <img src="images/valerie.jpg" alt="Valérie Fierens" class="profile-image">
+                <img src="../../valerie.jpg" alt="Valérie Fierens" class="profile-image">
                 <div class="profile-info">
+                    <div class="profile-icon">🌺</div>
                     <h2 class="profile-name">Valérie Fierens</h2>
                     <p class="profile-title">Oprichter & Travel Designer</p>
                 </div>
@@ -496,7 +438,7 @@
 
             <div class="story-content">
                 <span class="section-label">Over mij</span>
-                <h2 class="story-title">Reizen is mijn passie, <br>gezinnen verbinden mijn missie</h2>
+                <h2 class="story-title">Reizen is mijn passie, gezinnen verbinden mijn missie</h2>
 
                 <div class="story-text">
                     <p style="margin-bottom: 1rem;">
@@ -511,79 +453,57 @@
                         persoonlijke aanpak en oog voor detail.
                     </p>
                 </div>
-            </div>
-        </div>
 
-        <div class="offers-section">
-            <h2 class="section-title">Wat ik voor jullie doe</h2>
-            <p class="section-subtitle">Persoonlijke reisservice van A tot Z</p>
-
-            <div class="offers-grid">
-                <div class="offer-card">
-                    <img src="images/vibe1.jpg" alt="Reisplanning op Maat" class="offer-image">
-                    <div class="offer-content">
-                        <h3 class="offer-title">Reisplanning op Maat</h3>
-                        <p class="offer-description">
-                            Elk detail persoonlijk ontworpen volgens jullie wensen en budget
-                        </p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🏝️</div>
+                        <h3 class="service-title">Exotische Bestemmingen</h3>
+                        <p class="service-text">Tropische paradijzen en verborgen pareltjes</p>
                     </div>
-                </div>
-
-                <div class="offer-card">
-                    <img src="images/vibe11.jpg" alt="Exotische Bestemmingen" class="offer-image">
-                    <div class="offer-content">
-                        <h3 class="offer-title">Exotische Bestemmingen</h3>
-                        <p class="offer-description">
-                            Van tropische eilanden tot avontuurlijke safaris en culturele ontdekkingen
-                        </p>
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3 class="service-title">Op Maat Gemaakt</h3>
+                        <p class="service-text">Persoonlijke service van begin tot eind</p>
                     </div>
-                </div>
-
-                <div class="offer-card">
-                    <img src="images/vibe3.jpg" alt="Gezinsvriendelijk" class="offer-image">
-                    <div class="offer-content">
-                        <h3 class="offer-title">Gezinsvriendelijk</h3>
-                        <p class="offer-description">
-                            Reizen die perfect zijn voor kinderen én ouders
-                        </p>
-                    </div>
-                </div>
-
-                <div class="offer-card">
-                    <img src="images/vibe6.jpg" alt="Bewust Reizen" class="offer-image portrait">
-                    <div class="offer-content">
-                        <h3 class="offer-title">Bewust Reizen</h3>
-                        <p class="offer-description">
-                            Duurzame en authentieke reiservaringen met respect voor lokale gemeenschappen
-                        </p>
+                    <div class="service-card">
+                        <div class="service-icon">🌿</div>
+                        <h3 class="service-title">Bewust Reizen</h3>
+                        <p class="service-text">Duurzaam en authentiek</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="cta-box">
-            <div class="cta-icon-container" id="envelope-container" onclick="revealEmail()" title="Klik om e-mail te tonen">
-                <svg class="cta-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="20" y="30" width="60" height="40" rx="3"/>
-                    <path d="M20 35 L50 52 L80 35"/>
-                </svg>
-            </div>
-            <h2 class="cta-title">Klaar om jullie droomreis te plannen?</h2>
-            <p class="cta-description">
-                Ook al is de website nog in ontwikkeling, ik sta nu al klaar om jullie te helpen!
-                Neem vrijblijvend contact op voor een eerste inspirerend gesprek.
+        <div class="mission-box">
+            <div class="mission-icon">✨</div>
+            <h3 class="mission-title">Mijn Missie</h3>
+            <p class="mission-text">
+                Bij The Palmtree Collection creëer ik exclusieve gezinsreizen die niet alleen ontspanning brengen,
+                maar ook verbinding, verwondering en groei. Elk avontuur dat ik samenstellel is een verhaal vol betekenis —
+                een herinnering die gezinnen een leven lang koesteren.
             </p>
-            <a href="https://www.the-palmtree-collection.com/start-je-reis" class="cta-btn">Start je reis hier</a>
+        </div>
+
+        <div class="cta-section">
+            <h3 class="cta-title">Droom je van een unieke gezinsreis?</h3>
+            <p class="cta-text">
+                Of het nu gaat om een hele familie die samen de wereld wil ontdekken of een koppel dat er even tussenuit wil —
+                bij The Palmtree Collection ben je aan het juiste adres voor stijlvolle, op maat gemaakte reizen.
+            </p>
+            <button class="cta-btn" onclick="revealEmail(event)">Neem vrijblijvend contact op</button>
+            <div class="email-display" id="email-display"></div>
         </div>
     </div>
 
     <script>
-        function revealEmail() {
+        function revealEmail(event) {
+            event.preventDefault();
             const user = 'valerie';
             const domain = 'the-palmtree-collection.com';
             const email = user + '@' + domain;
-            const container = document.getElementById('envelope-container');
-            container.outerHTML = '<div class="email-reveal"><a href="mailto:' + email + '">' + email + '</a></div>';
+            const emailDisplay = document.getElementById('email-display');
+            emailDisplay.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+            event.target.style.display = 'none';
         }
     </script>
 </body>
