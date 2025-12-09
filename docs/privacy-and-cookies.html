@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy en Cookie beleid - The Palmtree Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #faf6f1;
+            color: #4a3f35;
+            line-height: 1.7;
+        }
+
+        .hero {
+            min-height: 80px;
+            background: linear-gradient(135deg, rgba(45, 139, 143, 0.95) 0%, rgba(193, 120, 84, 0.9) 100%),
+                        url('images/vibe16.jpg') center 40% / cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1.25rem 2rem;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 0.25rem;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .policy-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .policy-intro {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #5a4a3a;
+            margin-bottom: 2rem;
+        }
+
+        .company-info {
+            background: #e8f4f4;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .company-info p {
+            margin-bottom: 0.5rem;
+            color: #2d8b8f;
+        }
+
+        .company-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: #2d8b8f;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            border-bottom: 2px solid #e8f4f4;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #c17854;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #5a4a3a;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #5a4a3a;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #2d8b8f 0%, #3aa0a5 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .contact-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .contact-box li {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-box a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            color: #2d8b8f;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: #cbe0d6;
+            color: #2d8b8f;
+            padding: 1.25rem 2rem;
+            margin-top: 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #2d8b8f;
+            text-decoration: none;
+            font-size: 0.85rem;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-instagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            color: #2d8b8f;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-instagram:hover {
+            opacity: 0.8;
+        }
+
+        .footer-instagram svg {
+            width: 18px;
+            height: 18px;
+            fill: #2d8b8f;
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 0.3rem;
+        }
+
+        .footer-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .footer-bts {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .footer-bts img {
+            height: 28px;
+            width: auto;
+        }
+
+        .footer-bts-text {
+            font-size: 0.75rem;
+            opacity: 0.85;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.3rem;
+                letter-spacing: 3px;
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .container {
+                padding: 2rem 1.5rem;
+            }
+
+            .policy-section {
+                padding: 2rem 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .site-footer {
+                padding: 1.5rem 1.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            .footer-right {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 1rem 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 1.1rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-subtitle {
+                font-size: 0.85rem;
+            }
+
+            .policy-section {
+                padding: 1.5rem 1rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            p, li {
+                font-size: 0.95rem;
+            }
+
+            .site-footer {
+                padding: 1.25rem 1rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .footer-links a {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>THE PALMTREE COLLECTION</h1>
+            <p class="hero-subtitle">Privacy en Cookie beleid</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="policy-section">
+            <p class="policy-intro">
+                The Palmtree Collection respecteert op zijn website de privacy van alle gebruikers.
+                De persoonlijke informatie die u ons verschaft, wordt steeds in vertrouwen behandeld.
+            </p>
+
+            <div class="company-info">
+                <p><strong>Ons bedrijf is gevestigd op:</strong> Kraaivenstraat 58, 2820 Rijmenam</p>
+                <p><strong>Ons ondernemingsnummer of BTW-nummer is:</strong> BE1028.239.887</p>
+            </div>
+
+            <h2>Uw persoonsgegevens, onze verantwoordelijkheid</h2>
+            <p>Op deze website verzamelen we persoonsgegevens. Deze gegevens worden door ons bedrijf beheerd. Het gaat om zaken zoals:</p>
+            <ul>
+                <li>Uw naam, adres, e-mailadres en andere gegevens, bij het invullen van formulieren op onze website</li>
+                <li>Alle informatie met betrekking tot de pagina's die u op onze site geraadpleegd heeft</li>
+                <li>Uw domeinnaam (IP-adres) als u een bezoek brengt aan onze webpagina's</li>
+                <li>Alle informatie die nodig is om onze diensten voldoende te kunnen uitvoeren en u op de hoogte te houden van de status hiervan</li>
+            </ul>
+
+            <p>Deze informatie wordt gebruikt om:</p>
+            <ul>
+                <li>De inhoud van onze website en onze diensten te verbeteren</li>
+                <li>U later te contacteren om op de hoogte te blijven van trends en aanbiedingen in onze sector</li>
+                <li>U te contacteren in verband met (lopende) projecten en diensten die bij ons bezig zijn</li>
+                <li>Klanten en orders te beheren</li>
+            </ul>
+
+            <h2>Het gebruik van cookies</h2>
+            <p>
+                Op deze site gebruiken we functionele cookies. Deze cookies zorgen ervoor dat specifieke voorkeuren
+                bijgehouden worden op uw computer. Als u dan later de website bezoekt, worden deze gegevens opnieuw
+                ingelezen. Hieronder valt bijvoorbeeld uw taalkeuze en welke pagina's u in het verleden hebt bezocht.
+                Deze gegevens worden door ons geïnterpreteerd om de kwaliteit van de website en onze diensten te optimaliseren.
+            </p>
+            <p>
+                U kunt ervoor kiezen om deze cookies uit te schakelen. Dat doet u door gebruik te maken de mogelijkheden
+                van uw browser. U vindt meer informatie over deze mogelijkheden op de website van de aanbieder van uw browser.
+            </p>
+
+            <h3>Cookies van derden</h3>
+            <p>
+                Soms wordt er verwezen naar onderdelen van externe websites. Het is mogelijk dat deze websites ook
+                andere cookies bijhouden. Wij raden u aan de privacy policy van deze websites afzonderlijk te controleren.
+            </p>
+
+            <h2>Veiligheid</h2>
+            <p>
+                Alle gegevens die door ons bewaard worden, staan in een beveiligde omgeving. We doen er alles aan om
+                de meest gangbare standaarden binnen de IT-sector te hanteren om deze gegevens en de overdracht ervan te beveiligen.
+            </p>
+            <p>
+                De persoonsgegevens verwerkt voor klantenbeheer zullen worden bewaard gedurende de termijn die
+                noodzakelijk is om aan de wettelijke vereisten te voldoen (onder andere op het gebied van boekhouding).
+            </p>
+
+            <h3>Gegevens naar derden</h3>
+            <p>
+                Wij delen uw gegevens niet met derden. Wij delen uw adresgegevens uitsluitend met partners die de
+                gegevens verwerken in functie van onze diensten. Onze werknemers en door ons ingeschakelde partners
+                zijn verplicht om de vertrouwelijkheid van uw gegevens te respecteren.
+            </p>
+
+            <h3>Datalek</h3>
+            <p>
+                Wij doen er alles aan om uw gegevens te beveiligen, maar indien de privacy van uw persoonsgegevens
+                toch in gedrang zou komen door een datalek, wordt u hiervan meteen op de hoogte gebracht. We doen er
+                dan alles aan om dit lek in de toekomst tegen te gaan via een preventieve aanpak.
+            </p>
+
+            <h2>Hoe ons contacteren in verband met ons privacy beleid?</h2>
+            <p>
+                U kan steeds de gegevens die wij over u bewaren opvragen. Ook als u wenst te reageren op ons privacy beleid,
+                kan u ons contacteren via volgende kanalen:
+            </p>
+
+            <div class="contact-box">
+                <h3>Contactgegevens</h3>
+                <ul>
+                    <li>Via e-mail: <span id="email-container"></span></li>
+                    <li>Per post: Kraaivenstraat 58, 2820 Rijmenam</li>
+                </ul>
+                <p>U heeft steeds het recht om "vergeten" te worden. Via bovenstaande gegevens kan u ons contacteren hieromtrent.</p>
+            </div>
+
+            <div style="margin-bottom: 2rem;"></div>
+
+            <h2>Feedback?</h2>
+            <p>
+                Op aanvraag bieden wij de bezoekers de mogelijkheid om eventuele onjuiste gegevens die wij van hen
+                bijhouden te corrigeren. Als u uw persoonlijke gegevens wenst te verbeteren, gelieve ons dan te
+                contacteren op de hierboven vermelde kanalen.
+            </p>
+            <p>
+                Als u vindt dat onze site niet in overeenstemming is met ons privacy-beleid, neem dan contact op
+                via de bovenstaande gegevens.
+            </p>
+            <p>
+                Wanneer wij onze privacy policy aanpassen, zullen wij de datum van 'laatst geüpdatet' aanpassen
+                bovenaan deze policy. Bij grote aanpassingen kunnen we dit ook via andere kanalen doen, zoals e-mail.
+            </p>
+
+            <h2>Disclaimer</h2>
+            <p>
+                Door gebruik te maken van onze website verbind je je ertoe onze gebruiksvoorwaarden te aanvaarden en na te leven.
+            </p>
+            <p>
+                Wij leveren grote inspanningen opdat de ter beschikking gestelde informatie juist en bijgewerkt zou zijn.
+                Het betreft evenwel louter een inspanningsverbintenis. Ondanks deze inspanningen kunnen onjuistheden zich
+                voordoen in de ter beschikking gestelde informatie. Wij kunnen in geen geval aansprakelijk worden gesteld
+                voor rechtstreekse of onrechtstreekse schade die ontstaat uit het gebruik van de informatie op deze site.
+            </p>
+            <p>
+                Bij twijfel of indien je onjuistheden zou vaststellen in de informatie die via de site ter beschikking
+                wordt gesteld, dien je ons altijd te contacteren.
+            </p>
+            <p>
+                De inhoud van de site (links inbegrepen) kan te allen tijde zonder aankondiging of kennisgeving aangepast,
+                gewijzigd of aangevuld worden.
+            </p>
+            <p>
+                Wij kunnen op geen enkele wijze aansprakelijk gehouden worden voor een slechte werking of tijdelijke
+                (on)beschikbaarheid van de website of voor enige vorm van schade, rechtstreeks of onrechtstreeks,
+                die zou voortvloeien uit de toegang tot of het gebruik van de website.
+            </p>
+            <p>
+                De website kan hyperlinks bevatten naar websites of pagina's van derden, of daar onrechtstreeks naar
+                verwijzen. Het plaatsen van links naar deze websites of pagina's impliceert op geen enkele wijze een
+                impliciete goedkeuring van de inhoud ervan.
+            </p>
+
+            <h2>Intellectuele eigendomsrechten</h2>
+            <p>
+                De teksten, tekeningen, foto's, films, beelden, data, handels- en domeinnamen, merken, logo's en andere
+                bestanddelen van deze site zijn beschermd door intellectuele rechten en behoren ons of derden toe.
+                Het is verboden zonder voorafgaand schriftelijk akkoord van ons de op en via deze website aangeboden
+                informatie op te slaan (anders dan noodzakelijk om de website te kunnen bekijken), te reproduceren,
+                te wijzigen, openbaar te maken, te distribueren of te verzenden, te verkopen of anderszins over te
+                dragen of enige rechten hierop te verlenen aan derden.
+            </p>
+
+            <h2>Niet-toegestaan gebruik van de website</h2>
+            <p>Je verbindt je er onder andere toe:</p>
+            <ul>
+                <li>De informatie niet wederrechtelijk te gebruiken</li>
+                <li>Geen zodanig gebruik te maken van de website waardoor de website wordt beschadigd, vervormd,
+                    onderbroken, stopgezet of anderszins minder efficiënt wordt gemaakt</li>
+                <li>De website niet te gebruiken voor transmissie of posting van computervirussen, of voor transmissie
+                    of posting van illegaal of onrechtmatig materiaal, of van materiaal dat op enige wijze ongepast is
+                    (met inbegrip van maar niet beperkt tot materiaal met een lasterlijk, obsceen of bedreigend karakter)</li>
+                <li>De website niet zodanig te gebruiken dat een inbreuk gepleegd wordt op de rechten van een natuurlijke
+                    persoon, rechtspersoon of vereniging, zoals onder meer, doch niet uitsluitend, de rechten van privacy
+                    en intellectuele eigendom</li>
+                <li>De website niet te gebruiken voor posting en transmissie van materiaal met promotionele of publicitaire
+                    doeleinden zonder hiervoor een voorafgaandelijke toestemming aan ons te vragen, behalve indien daarom
+                    verzocht werd door de ontvanger</li>
+            </ul>
+
+            <h2>Toepasselijk recht</h2>
+            <p>
+                Bij eventuele geschillen is het Belgisch recht van toepassing. Enkel de rechtbanken zoals vermeld in
+                onze algemene voorwaarden zijn bevoegd.
+            </p>
+
+            <a href="index.html" class="back-link">&larr; Terug naar de homepage</a>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-and-cookies.html">Privacy en Cookie beleid</a>
+            </div>
+
+            <div class="footer-center">
+                <a href="https://www.instagram.com/the_palmtree_collection/" target="_blank" rel="noopener" class="footer-instagram">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    Volg ons op Instagram
+                </a>
+                <p class="footer-copyright">&copy; 2025 The Palmtree Collection</p>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-bts">
+                    <img src="images/bts.svg" alt="BTS Logo">
+                    <span class="footer-bts-text">Trots lid van de Travel-Experts</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            var user = 'valerie';
+            var domain = 'the-palmtree-collection.com';
+            var email = user + '@' + domain;
+            var container = document.getElementById('email-container');
+            container.innerHTML = '<a href="mailto:' + email + '">' + email + '</a>';
+        })();
+    </script>
+</body>
+</html>
